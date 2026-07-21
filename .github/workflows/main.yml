@@ -9,6 +9,11 @@ jobs:
     name: 'Terraform Validation & Plan'
     runs-on: ubuntu-latest
 
+    # 👈 إضافة مسار العمل الافتراضي لفولدر terraform
+    defaults:
+      run:
+        working-directory: ./terraform
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
