@@ -34,7 +34,7 @@ resource "aws_lambda_function" "notify_new_user" {
   handler          = "index.lambda_handler"
   runtime          = "python3.9"
   source_code_hash = data.archive_file.notify_user_zip.output_base64sha256
-  
+
   environment {
     variables = {
       SNS_TOPIC_ARN = aws_sns_topic.security_alerts.arn
@@ -49,7 +49,7 @@ resource "aws_lambda_function" "detect_access_key" {
   handler          = "index.lambda_handler"
   runtime          = "python3.9"
   source_code_hash = data.archive_file.detect_ak_zip.output_base64sha256
-  
+
   environment {
     variables = {
       SNS_TOPIC_ARN = aws_sns_topic.security_alerts.arn

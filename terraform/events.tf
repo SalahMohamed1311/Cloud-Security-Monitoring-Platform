@@ -3,10 +3,10 @@ resource "aws_cloudwatch_event_rule" "security_events" {
   description = "Captures critical IAM and Security Group changes"
 
   event_pattern = jsonencode({
-    "source": ["aws.iam", "aws.ec2"],
-    "detail-type": ["AWS API Call via CloudTrail"],
-    "detail": {
-      "eventName": [
+    "source" : ["aws.iam", "aws.ec2"],
+    "detail-type" : ["AWS API Call via CloudTrail"],
+    "detail" : {
+      "eventName" : [
         "CreateUser",
         "CreateAccessKey",
         "AuthorizeSecurityGroupIngress",
